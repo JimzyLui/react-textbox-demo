@@ -12,10 +12,17 @@ const Textbox_simple = props => {
     toolTip,
     defaultValue,
     classList,
-    alertText
+    alertText,
+    controlProps,
+    setControlProps
   } = props;
-  console.log(props);
-
+  // console.log(props);
+  // console.log(`controlProps: ${JSON.stringify(controlProps, null, 2)}`);
+  const handleChange = e => {
+    e.preventDefault();
+    console.log(`${id}: ${e.target.value}`);
+    setControlProps({ ...controlProps, id: e.target.value });
+  };
   return (
     <div classList={classList}>
       <span>
@@ -29,6 +36,7 @@ const Textbox_simple = props => {
           title={toolTip}
           defaultValue={defaultValue}
           classList={classList}
+          onChange={handleChange}
         />
       </span>
       <span className="alertText">{alertText}</span>

@@ -14,10 +14,10 @@ const Textbox = props => {
     classList,
     alertText
   } = props;
-  console.log(props);
+  console.log(`Textbox props: ${JSON.stringify(props, null, 2)}`);
 
   return (
-    <div classList={classList}>
+    <div className={classList}>
       <span>
         <label>{label || "empty"}: </label>
       </span>
@@ -28,7 +28,7 @@ const Textbox = props => {
           placeholder={placeholderText}
           title={toolTip}
           defaultValue={defaultValue}
-          classList={classList}
+          // className={classList}
         />
       </span>
       <span className="alertText">{alertText}</span>

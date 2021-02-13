@@ -10,15 +10,20 @@ export default function App() {
     label: "Name",
     classList: "required",
     placeholderText: "value",
-    toolTips: "Enter Data inside textbox"
+    toolTip: "Enter Data inside textbox",
+    defaultValue: "",
+    alertText: "* alert!   alert!"
   };
   const [controlProps, setControlProps] = useState({ ...txtTextboxDemo });
   return (
     <div>
       <h3>React Controls Demo</h3>
-      <p>(using StackBlitz)</p>
+
       <hr />
-      <TextboxDefinitionForm />
+      <TextboxDefinitionForm
+        controlProps={controlProps}
+        setControlProps={setControlProps}
+      />
       <Textbox {...controlProps} />
     </div>
   );
