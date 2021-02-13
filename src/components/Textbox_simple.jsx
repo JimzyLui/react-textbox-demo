@@ -7,6 +7,7 @@ import "./Textbox.styles";
 const Textbox_simple = props => {
   const {
     id,
+    name,
     label,
     placeholderText,
     toolTip,
@@ -16,13 +17,14 @@ const Textbox_simple = props => {
     controlProps,
     setControlProps
   } = props;
-  // console.log(props);
-  // console.log(`controlProps: ${JSON.stringify(controlProps, null, 2)}`);
+
   const handleChange = e => {
-    e.preventDefault();
-    console.log(`${id}: ${e.target.value}`);
-    setControlProps({ ...controlProps, id: e.target.value });
+    // e.preventDefault();
+    const { name, value } = e.target;
+    console.log(`${name}: ${value}`);
+    setControlProps({ ...controlProps, [name]: value });
   };
+
   return (
     <div classList={classList}>
       <span>
@@ -32,11 +34,13 @@ const Textbox_simple = props => {
         <input
           type="text"
           id={id || "idTextbox"}
+          name={name || id}
           placeholder={placeholderText}
           title={toolTip}
           defaultValue={defaultValue}
           classList={classList}
           onChange={handleChange}
+          // onBlur={handleChange}
         />
       </span>
       <span className="alertText">{alertText}</span>

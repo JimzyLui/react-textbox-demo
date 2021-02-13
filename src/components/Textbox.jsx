@@ -12,12 +12,17 @@ const Textbox = props => {
     toolTip,
     defaultValue,
     classList,
-    alertText
+    alertText,
+    required,
+    setRenderedValue
   } = props;
   console.log(`Textbox props: ${JSON.stringify(props, null, 2)}`);
-
+  let newclassList = `${classList} ${required ? "required" : ""}`;
+  const handleChange = e => {
+    setRenderedValue(e.target.value);
+  };
   return (
-    <div className={classList}>
+    <div className={newclassList}>
       <span>
         <label>{label || "empty"}: </label>
       </span>
@@ -29,6 +34,7 @@ const Textbox = props => {
           title={toolTip}
           defaultValue={defaultValue}
           // className={classList}
+          onChange={handleChange}
         />
       </span>
       <span className="alertText">{alertText}</span>

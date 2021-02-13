@@ -28,15 +28,20 @@ const TextboxDefinitionForm = ({ controlProps, setControlProps }) => {
       <h5>Textbox Settings</h5>
       <form id={"idForm"}>
         <Textbox_simple
+          key="idID"
           id={"idID"}
+          name={"id"}
           label={"id"}
           defaultValue={controlProps.id}
           onChange={handleChange}
           controlProps={controlProps}
           setControlProps={setControlProps}
+          classList={classList}
         />
         <Textbox_simple
+          key="idLabel"
           id={"idLabel"}
+          name={"label"}
           label={"Label"}
           defaultValue={controlProps.label}
           onChange={handleChange}
@@ -44,7 +49,9 @@ const TextboxDefinitionForm = ({ controlProps, setControlProps }) => {
           setControlProps={setControlProps}
         />
         <Textbox_simple
+          key="idToolTip"
           id={"idToolTip"}
+          name={"toolTip"}
           label={"ToolTip"}
           defaultValue={controlProps.toolTip}
           onChange={handleChange}
@@ -52,7 +59,9 @@ const TextboxDefinitionForm = ({ controlProps, setControlProps }) => {
           setControlProps={setControlProps}
         />
         <Textbox_simple
+          key="idPlaceholderText"
           id={"idPlaceholderText"}
+          name={"placeholderText"}
           label={"PlaceholderText"}
           defaultValue={controlProps.placeholderText}
           onChange={handleChange}
@@ -60,7 +69,9 @@ const TextboxDefinitionForm = ({ controlProps, setControlProps }) => {
           setControlProps={setControlProps}
         />
         <Textbox_simple
+          key="idDefaultValue"
           id={"idDefaultValue"}
+          name={"defaultValue"}
           label={"Default Value"}
           defaultValue={controlProps.defaultValue}
           onChange={handleChange}
@@ -68,7 +79,9 @@ const TextboxDefinitionForm = ({ controlProps, setControlProps }) => {
           setControlProps={setControlProps}
         />
         <Textbox_simple
+          key="idAlertText"
           id={"idAlertText"}
+          name={"alertText"}
           label={"AlertText"}
           defaultValue={controlProps.alertText}
           toolTip={"Leave empty if no value"}
@@ -77,15 +90,19 @@ const TextboxDefinitionForm = ({ controlProps, setControlProps }) => {
           setControlProps={setControlProps}
         />
         <Checkbox_simple
+          key="idCheckbox"
           id="idCheckbox"
-          label="Required?"
+          name={"required"}
+          label="Required Field?"
           checked
           onChange={handleChange}
           controlProps={controlProps}
           setControlProps={setControlProps}
         />
         <Textbox_simple
+          key={"idClassList"}
           id={"idClassList"}
+          name={"classList"}
           label={"ClassList"}
           defaultValue={controlProps.classList}
           onChange={handleChange}
