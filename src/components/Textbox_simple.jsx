@@ -4,7 +4,7 @@ import "./Textbox.styles";
 // import styled from "styled-components";
 // const TextboxStyles = styled``;
 
-const Textbox = props => {
+const Textbox_simple = props => {
   const {
     id,
     label,
@@ -36,4 +36,4 @@ const Textbox = props => {
   );
 };
 
-export default Textbox;
+export default Textbox_simple;

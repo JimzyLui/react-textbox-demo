@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 import Textbox from "./components/Textbox";
+import TextboxDefinitionForm from "./components/TextboxDefinitionForm";
 
 export default function App() {
   const txtTextboxDemo = {
     id: "idTextbox",
-    label: "Name"
+    label: "Name",
+    classList: "required",
+    placeholderText: "value",
+    toolTips: "Enter Data inside textbox"
   };
+  const [controlProps, setControlProps] = useState({ ...txtTextboxDemo });
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-      <Textbox {...txtTextboxDemo} />
+      <h3>React Controls Demo</h3>
+      <p>(using StackBlitz)</p>
+      <hr />
+      <TextboxDefinitionForm />
+      <Textbox {...controlProps} />
     </div>
   );
 }
