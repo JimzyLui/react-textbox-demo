@@ -94,7 +94,7 @@ const TextboxDefinitionForm = ({ controlProps, setControlProps }) => {
           id="idCheckbox"
           name={"required"}
           label="Required Field?"
-          checked
+          checked={controlProps.required}
           onChange={handleChange}
           controlProps={controlProps}
           setControlProps={setControlProps}

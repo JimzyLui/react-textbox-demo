@@ -26,16 +26,20 @@ export default function App() {
         setControlProps={setControlProps}
       />
       <br />
-      <label>Rendered Control:</label>
+      <div id="idRenderedControl">
+        <label>Rendered Control:</label>
+        <br />
+        <Textbox {...controlProps} setRenderedValue={setRenderedValue} />
+      </div>
       <br />
-      <Textbox {...controlProps} setRenderedValue={setRenderedValue} />
-      <br />
-      <label>Inside Application:</label>
-      <br />
-      <code>
-        <label>{controlProps.label}: </label>
-        <span>{renderedValue}</span>
-      </code>
+      <div id="idInsideApp">
+        <label>Inside Application:</label>
+        <br />
+        <code>
+          <label>{controlProps.label}: </label>
+          <span>{renderedValue}</span>
+        </code>
+      </div>
     </div>
   );
 }
